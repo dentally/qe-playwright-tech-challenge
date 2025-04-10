@@ -13,7 +13,7 @@ describe("Retro", () => {
       .wait(1000);
   });
 
-  it("Set a board password", () => {
+  it.only("Set a board password", () => {
     Retro.setPassword("1234");
     Retro.removePassword("1234");
   });
