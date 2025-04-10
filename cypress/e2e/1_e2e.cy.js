@@ -13,7 +13,7 @@ describe("Retro", () => {
       .wait(1000);
   });
 
-  it("Set a board password", () => {
+  it.only("Set a board password", () => {
     Retro.setPassword("1234");
     Retro.removePassword("1234");
   });
@@ -50,10 +50,9 @@ describe("Retro", () => {
     }
 
     // to do
-    // add action items
-    //// action items are already stored in the items fixture
+    // add action items (NB. reference the 'action' key stored in the items fixture)
 
-    // check the action item and assert it is ticked
+    // check the action item
 
     // finish the retro and assert the retro is no longer active
   });

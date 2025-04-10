@@ -48,13 +48,13 @@ class _Retro {
 
   setPassword(password) {
     cy.contains("svg", "Retro not protected by password").click();
-    cy.get('[type="password"]').type(password);
+    cy.get('[type="password"]').type(`${password}`);
     cy.contains("button", "Set").click();
   }
 
   removePassword(password) {
     cy.contains("svg", "Retro protected by password").click();
-    cy.get('[type="password"]').type(password);
+    cy.get('[type="password"]').type(`${password}`);
     cy.contains("button", "Remove").click();
     cy.contains("svg", "Retro not protected by password").should("be.visible");
   }
