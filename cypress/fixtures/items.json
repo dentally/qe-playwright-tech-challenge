@@ -1,7 +1,7 @@
 {
   "good": [
-     "we have a new joiner woohoo!",
-     "automation against a simple application is so much fun",
+    "we have a new joiner woohoo!",
+    "automation against a simple application is so much fun",
     "thanks to CI we caught 3 p1 bugs before they hit product. Phew!"
   ],
 
@@ -13,7 +13,5 @@
     "why are there no unique test locators in this application?",
     "should we add a minimum complexity requirement to the password input?"
   ],
-  "actions": [
-    "add some test locators"
-  ]
+  "actions": ["this is my action item!"]
 }

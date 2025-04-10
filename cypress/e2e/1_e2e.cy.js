@@ -50,7 +50,7 @@ describe("Retro", () => {
     }
 
     // to do
-    // add action items (NB. action items are already stored in the items fixture)
+    // add action items (NB. reference the 'action' key stored in the items fixture)
 
     // check the action item and assert it is ticked
 
