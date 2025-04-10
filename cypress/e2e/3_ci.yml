@@ -1,0 +1,61 @@
+name: Run Tests in CI
+
+on:
+  workflow_call:
+    inputs:
+      pr-number:
+        required: true
+        type: number
+    secrets:
+      record-key:
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    container: cypress/browsers:node16.14.2-slim-chrome103-ff102
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+    steps:
+      - name: Cancel on runs with newer updates
+        uses: styfle/cancel-workflow-action@0.12.1
+        with:
+          access_token: "abcdef123"
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+      - name: Install dependencies
+        run: >
+          cd e2e &&
+          export CYPRESS_DOWNLOAD_MIRROR=https://cy-cdn.currents.dev &&
+          npm i
+      - name: Rename to split tests
+        run: cd e2e && node test-split-ci.js core
+      - name: Run E2E Tests
+        if: inputs.bypass == false
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: e2e
+          command: >
+            npx cypress-cloud run
+            --record
+            --browser chrome
+            --key ${{ secrets.record-key }}
+            --spec cypress/specs/**/${{ matrix.containers }}-!(quarantine)*.cy.js
+            --ci-build-id ${{ github.repository }}-${{ github.run_id }}-core
+            --group core-e2e(${{ matrix.containers }}-run-${{ github.run_attempt }})
+            --env grepTags=@core+-@flaky,grepFilterSpecs=true
+            --config-file cypress.config.js
+            --tag pr${{ github.event.number }}
+        env:
+          CYPRESS_environment: review
+          CYPRESS_BASE_URL: https://pr${{ inputs.pr-number }}.dentally.cool
+      - name: Upload failing tests screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: core-cypress-failing-tests-screenshots
+          path: e2e/cypress/screenshots/

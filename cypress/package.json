@@ -1,0 +1,11 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "co pairing tech challenge",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "cypress": "12.17.4"
+  },
+  "author": "HS1 QE"
+}

@@ -1,0 +1,16 @@
+{
+  "voteItem1": {
+    "itemContent": "thanks to CI we caught 3 p1 bugs before they hit product. Phew!",
+    "numberOfVotes": 5
+  },
+
+  "voteItem2": {
+    "itemContent": "lots of the userbase think that 4 cards on a retro board is too few",
+    "numberOfVotes": 2
+  },
+
+  "voteItem3": {
+    "itemContent": "why are there no unique test locators in this application?",
+    "numberOfVotes": 3
+  }
+}
