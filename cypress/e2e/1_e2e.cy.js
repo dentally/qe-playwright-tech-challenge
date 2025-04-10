@@ -52,7 +52,7 @@ describe("Retro", () => {
     // to do
     // add action items (NB. reference the 'action' key stored in the items fixture)
 
-    // check the action item and assert it is ticked
+    // check the action item
 
     // finish the retro and assert the retro is no longer active
   });
