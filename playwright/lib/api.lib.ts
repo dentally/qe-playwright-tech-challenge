@@ -35,9 +35,7 @@ class _Api {
     const uuid = await this.getUuid();
     const body = this.apiBody(uuid);
 
-    await this.page.request.post('https://www.retrotool.app/api/graph', {
-      data: body,
-    });
+    // put your API request here
   }
 }
 

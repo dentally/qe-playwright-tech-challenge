@@ -18,6 +18,6 @@ test.describe('API Testing', () => {
     await api.createItem();
 
     // assert item has been added
-    // await expect(page.locator('div', { hasText: 'hey I sent this via a POST request!' })).toBeVisible();
+    // await expect(page.getByText( 'hey I sent this via a POST request!' )).toBeVisible();
   });
 });

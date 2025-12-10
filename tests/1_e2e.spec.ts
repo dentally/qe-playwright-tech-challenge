@@ -39,7 +39,7 @@ test.describe('Retro', () => {
     await retro.setToActions();
 
     // to do
-    // add action items found in boardItems.actions
+    // add action items found in boardItems.actions and reuse retro.addTicket
     // assert the action item are listed
     // finish the retro and assert the retro is no longer active
   });
