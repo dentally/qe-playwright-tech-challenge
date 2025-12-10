@@ -1,11 +1,16 @@
 {
-  "name": "e2e",
+  "name": "qe-playwright-pairing",
   "version": "1.0.0",
-  "description": "co pairing tech challenge",
-  "dependencies": {
+  "description": "A co-pairing tech challenge for QE candidates in the JavaScript space",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "cypress": "12.17.4"
-  },
-  "author": "HS1 QE"
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
 }

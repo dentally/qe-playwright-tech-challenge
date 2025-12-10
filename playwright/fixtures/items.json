@@ -4,7 +4,6 @@
     "automation against a simple application is so much fun",
     "thanks to CI we caught 3 p1 bugs before they hit product. Phew!"
   ],
-
   "bad": [
     "lots of the userbase think that 4 cards on a retro board is too few",
     "lots of the userbase think that 4 cards on a retro board is too many"
@@ -13,5 +12,8 @@
     "why are there no unique test locators in this application?",
     "should we add a minimum complexity requirement to the password input?"
   ],
-  "actions": ["this is my action item!"]
+  "actions": [
+    "slow down and do more testing!",
+    "add more unique locators to the app!"
+  ]
 }
